@@ -25,5 +25,5 @@ get_values
 puts "Would you like to [add], [multiply], [subtract] or [divide]?"
 response = gets.chomp
 
-answer = eval(response)
+answer = send(response)
 puts "The answer is #{ answer }"
