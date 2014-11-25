@@ -1,30 +1,29 @@
 def get_values
-  [gets, gets].map{ |n| n.chomp.to_i }
+  puts "Write 2 numbers"
+  $val1 = gets.chomp.to_i
+  $val2 = gets.chomp.to_i
 end
+
+def add
+  $val1 + $val2
+end
+
+def subtract
+  $val1 - $val2
+end
+
+def multiply
+  $val1 * $val2
+end
+
+def divide
+  $val1 / $val2
+end
+
+get_values
 
 puts "Would you like to [add], [multiply], [subtract] or [divide]?"
 response = gets.chomp
-which = "Which numbers would you like to"
 
-case response.downcase
-  
-when 'add'
-  puts "#{ which } add?"
-  operator = :+
-
-when 'subtract'
-  puts "#{ which } subtract?"
-  operator = :-
-
-when 'multiply'
-  puts "#{ which } multiply?"
-  operator = :*
-
-when 'divide'
-  puts "#{ which } divide?"
-  operator = :/
-
-end
-
-answer = get_values.inject(operator)
+answer = eval(response)
 puts "The answer is #{ answer }"
